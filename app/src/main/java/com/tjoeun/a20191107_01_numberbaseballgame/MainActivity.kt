@@ -66,7 +66,7 @@ class MainActivity : BaseActivity() {
             }
         }
 
-        chatList.add(ChatData("${strikeCnt}S ${ballCnt}S 입니다.", "CPU"))
+        chatList.add(ChatData("${strikeCnt}S ${ballCnt}B 입니다.", "CPU"))
 
         if (strikeCnt == 3){
             chatList.add(ChatData("축하합니다. 정답이야!", "CPU"))
