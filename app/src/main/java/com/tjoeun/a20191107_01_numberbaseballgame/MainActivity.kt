@@ -47,10 +47,22 @@ class MainActivity : BaseActivity() {
     }
 
     fun checkAnswer(){
+
+        var strikeCnt = 0
+        var ballCnt = 0
         
         for(i in 0..2){
             for (j in 0..2){
-                
+                if (userInputNumArray.get(i) == questNumArray.get(j)) {
+                    if (i==j) {
+                        //스트라이크 갯수 증가
+                        strikeCnt++
+                    }
+                    else {
+                        //볼의 갯수 증가
+                        ballCnt++
+                    }
+                }
             }
         }
         
