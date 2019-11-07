@@ -2,6 +2,7 @@ package com.tjoeun.a20191107_01_numberbaseballgame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import com.tjoeun.a20191107_01_numberbaseballgame.adapters.ChatAdapter
 import com.tjoeun.a20191107_01_numberbaseballgame.datas.ChatData
@@ -66,14 +67,18 @@ class MainActivity : BaseActivity() {
             }
         }
 
-        chatList.add(ChatData("${strikeCnt}S ${ballCnt}B 입니다.", "CPU"))
+        //1초 뒤에 {}안의 내용을 실행해줘라. 딜레이타임.
+        Handler().postDelayed({
+            chatList.add(ChatData("${strikeCnt}S ${ballCnt}B 입니다.", "CPU"))
 
-        if (strikeCnt == 3){
-            chatList.add(ChatData("축하합니다. 정답이야!", "CPU"))
-        }
+            if (strikeCnt == 3){
+                chatList.add(ChatData("축하합니다. 정답이야!", "CPU"))
+            }
 
-        chatAdapter?.notifyDataSetChanged()
-        chatListView.smoothScrollToPosition(chatList.size-1)
+            chatAdapter?.notifyDataSetChanged()
+            chatListView.smoothScrollToPosition(chatList.size-1)
+        },1000)
+
     }
     
     override fun setupEvents() {
