@@ -21,7 +21,7 @@ class MainActivity : BaseActivity() {
 
     fun createQuestion(){
         while (true){
-            val number = Random.nextInt(1,9)
+            val number = Random.nextInt(1,10)
 
             //지금 들고 있는 숫자가 방금 나온 숫자가 아니면...
             if (!questNumArray.contains((number))){
@@ -35,7 +35,7 @@ class MainActivity : BaseActivity() {
         }
 
         for(num in questNumArray) {
-            Log.d("출제 숫자", num.toString())
+            Log.d("출제숫자", num.toString())
         }
     }
 
